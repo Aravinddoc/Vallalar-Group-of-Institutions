@@ -1,14 +1,15 @@
 :root {
-  --color-primary: #5d8b6b; /* sage green */
-  --color-secondary: #f7cbca; /* soft pink */
-  --color-tertiary: #e1cfc7; /* warm beige */
-  --color-accent: #d6e5e5; /* light mint */
+  /* Professional palette */
+  --color-primary: #1E3A8A; /* Navy */
+  --color-secondary: #FACC15; /* Gold */
+  --color-tertiary: #F1F5F9; /* Soft neutral background */
+  --color-accent: #E5E7EB; /* Light gray accents/borders */
   --color-surface: #ffffff;
-  --color-ink: #2c3e3f;
-  --color-muted: #6b7c7d;
+  --color-ink: #0f172a; /* Dark slate for body text */
+  --color-muted: #475569; /* Muted slate */
   --radius: 20px;
-  --shadow: 0 10px 40px rgba(45, 62, 63, 0.08);
-  --shadow-lg: 0 20px 60px rgba(45, 62, 63, 0.12);
+  --shadow: 0 10px 40px rgba(2, 6, 23, 0.08);
+  --shadow-lg: 0 20px 60px rgba(2, 6, 23, 0.12);
 }
 
 * { 
@@ -22,10 +23,10 @@ html {
 }
 
 body {
-  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--color-ink);
-  background: linear-gradient(135deg, var(--color-accent) 0%, #ffffff 50%, var(--color-tertiary) 100%);
-  line-height: 1.6;
+  background: linear-gradient(135deg, var(--color-tertiary) 0%, #ffffff 70%);
+  line-height: 1.65;
 }
 
 img { 
@@ -142,19 +143,19 @@ p {
 }
 
 .btn-primary:hover {
-  background: #3a5a44;
+  background: #162f6a; /* darker navy */
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
   background: var(--color-secondary);
-  color: var(--color-ink);
+  color: #1e293b;
   box-shadow: var(--shadow);
 }
 
 .btn-secondary:hover {
-  background: #f5b8b7;
+  background: #eab308; /* slightly darker gold */
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -166,7 +167,7 @@ p {
 }
 
 .btn-outline:hover {
-  background: #3a5a44;
+  background: var(--color-primary);
   color: white;
 }
 
@@ -180,7 +181,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-accent);
   padding: 1rem 0;
@@ -408,9 +409,10 @@ p {
 
 /* Hero Section */
 .hero {
-  padding: 4rem 0;
+  padding: 5rem 0 4rem;
   text-align: left;
-  background: linear-gradient(135deg, var(--color-accent) 0%, rgba(255,255,255,0.8) 100%);
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.06) 0%, rgba(255,255,255,0.9) 60%),
+              radial-gradient(1200px 400px at 0% 0%, rgba(250, 204, 21, 0.06), transparent 60%);
 }
 
 @media (max-width: 767px) {
@@ -439,13 +441,13 @@ p {
 }
 
 .hero h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--color-ink);
 }
 
 .hero p {
   font-size: 1.125rem;
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 0 2rem;
   color: var(--color-muted);
 }
@@ -571,7 +573,7 @@ p {
 }
 
 .section.alt {
-  background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, var(--color-tertiary) 50%, rgba(255,255,255,0.5) 100%);
+  background: linear-gradient(135deg, rgba(30,58,138,0.04) 0%, var(--color-tertiary) 50%, rgba(30,58,138,0.04) 100%);
 }
 
 .section-head {
@@ -1239,6 +1241,54 @@ p {
   .site-footer .brand-title {
     animation-duration: 6s;
   }
+}
+
+/* Icon cards */
+.icon-card {
+  text-align: left;
+}
+
+.icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30,58,138,0.1);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.icon-circle svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Floating contact button */
+.contact-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  background: var(--color-primary);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.875rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-fab:hover {
+  background: #162f6a;
+}
+
+.contact-fab svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Respect user preferences for reduced motion */
