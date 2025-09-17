@@ -228,7 +228,8 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
 }
 
 .nav-toggle:hover {
@@ -245,28 +246,46 @@ p {
   height: 2px;
   background: var(--color-primary);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+              opacity 0.3s ease,
+              width 0.4s ease;
   transform-origin: center;
 }
 
 .nav-toggle-bar:nth-child(1) {
   margin-bottom: 4px;
+  width: 18px;
 }
 
 .nav-toggle-bar:nth-child(2) {
   margin-bottom: 4px;
+  width: 24px;
+}
+
+.nav-toggle-bar:nth-child(3) {
+  width: 18px;
+}
+
+.nav-toggle:hover {
+  transform: translateY(-1px);
 }
 
 .nav-toggle.open .nav-toggle-bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(6px) rotate(45deg);
+  width: 24px;
+  transition-delay: 0.02s;
 }
 
 .nav-toggle.open .nav-toggle-bar:nth-child(2) {
+  transform: scaleX(0.2);
   opacity: 0;
+  transition-duration: 0.3s;
 }
 
 .nav-toggle.open .nav-toggle-bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-6px) rotate(-45deg);
+  width: 24px;
+  transition-delay: 0.04s;
 }
 
 /* Mobile nav close button */
