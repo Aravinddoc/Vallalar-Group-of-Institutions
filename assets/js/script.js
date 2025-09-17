@@ -247,8 +247,8 @@ class AppleStyleAnimations {
   }
 
   setupParallax() {
-    // Add subtle parallax to hero elements (excluding hero-image for unified scrolling)
-    const parallaxElements = document.querySelectorAll('.hero-visual, .hero-blob');
+    // Add subtle parallax only to background blob so photo/header move together
+    const parallaxElements = document.querySelectorAll('.hero-blob');
     parallaxElements.forEach(el => el.classList.add('parallax-element'));
 
     // Throttled scroll handler for performance
