@@ -1311,7 +1311,7 @@ p {
 .contact-fab {
   position: fixed;
   right: 18px;
-  bottom: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom));
   z-index: 9999;
   background: var(--color-primary);
   color: #ffffff;
@@ -1322,7 +1322,7 @@ p {
   gap: 0.5rem;
   text-decoration: none;
   box-shadow: var(--shadow-lg);
-  transition: right 0.3s ease, left 0.3s ease;
+  transition: right 0.3s ease, left 0.3s ease, opacity 0.2s ease;
 }
 
 .contact-fab:hover {
@@ -1337,6 +1337,12 @@ p {
 /* When the slide-out nav (shelf) is open, hide the FAB */
 .nav-open .contact-fab {
   display: none;
+}
+
+/* Hidden state: fade out and disable interactions when main CTA is visible */
+.contact-fab.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Respect user preferences for reduced motion */
