@@ -1226,6 +1226,12 @@ p {
   margin-top: 2rem;
 }
 
+/* Align the apply CTA inside career card with body text */
+.card .apply-cta {
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
 /* Responsive adjustments */
 @media (max-width: 767px) {
   .hero-ctas {
