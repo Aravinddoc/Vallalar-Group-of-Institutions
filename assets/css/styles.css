@@ -1222,14 +1222,24 @@ p {
 }
 
 .apply-cta {
-  text-align: center;
-  margin-top: 2rem;
+  text-align: left;
+  margin-top: 1rem;
 }
 
 /* Align the apply CTA inside career card with body text */
 .card .apply-cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
   text-align: left;
   margin-top: 0.5rem;
+}
+
+/* Make the email button look balanced and readable on small screens */
+.apply-cta .btn {
+  padding: 0.875rem 1.25rem;
+  line-height: 1.2;
 }
 
 /* Responsive adjustments */
