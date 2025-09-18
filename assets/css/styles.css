@@ -1335,9 +1335,10 @@ p {
 }
 
 /* When the slide-out nav (shelf) is open, keep the FAB distinct by moving it left */
+/* Ensure the FAB always stays bottom-right, even when nav is open */
 .nav-open .contact-fab {
-  left: 18px;
-  right: auto;
+  left: auto;
+  right: 18px;
 }
 
 /* Respect user preferences for reduced motion */
