@@ -277,5 +277,49 @@ class AppleStyleAnimations {
 // Initialize Apple-style animations
 const appleAnimations = new AppleStyleAnimations();
 
+// Floating Contact button: hide when a main Contact CTA is visible
+(() => {
+  const fab = document.querySelector('.contact-fab');
+  if (!fab) return;
 
+  // Helper: exclude header/footer/nav links and the FAB itself
+  const isExcluded = (el) => {
+    return (
+      el === fab ||
+      el.closest('.site-header') !== null ||
+      el.closest('.site-nav') !== null ||
+      el.closest('.site-footer') !== null
+    );
+  };
 
+  // Identify candidate CTAs that navigate to the Contact page
+  const ctaSelectors = [
+    'a[href$="contact.html"]',
+    'a[href*="/contact.html"]',
+    'a[href^="/contact"]',
+    'a[href^="#contact"]',
+    '#main-contact'
+  ];
+
+  const candidates = Array.from(document.querySelectorAll(ctaSelectors.join(', ')))
+    .filter((el) => !isExcluded(el));
+
+  // If no candidates, nothing to observe
+  if (candidates.length === 0) return;
+
+  const toggleFab = (hidden) => {
+    fab.classList.toggle('is-hidden', hidden);
+    fab.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+  };
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      // Hide FAB if any observed CTA is at least 50% visible
+      const anyVisible = entries.some((e) => e.isIntersecting);
+      toggleFab(anyVisible);
+    },
+    { threshold: 0.5 }
+  );
+
+  candidates.forEach((el) => io.observe(el));
+})();
