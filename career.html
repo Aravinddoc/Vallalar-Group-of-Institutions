@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Careers at Vallalar Group of Institutions — join a values-driven community focused on compassion, service, and academic excellence." />
+    <title>Careers | Vallalar Group of Institutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-wrap">
+        <a class="brand" href="index.html" aria-label="Vallalar Group of Institutions home">
+          <span class="brand-title">Vallalar Group of Institutions</span>
+          <span class="brand-sub">Managed by Nanbargal Educational Trust</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="primary-nav" class="site-nav" aria-label="Primary">
+          <button class="nav-close" aria-label="Close navigation">×</button>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a class="active" href="career.html">Career</a></li>
+            <li><a href="net.html">NET</a></li>
+            <li><a class="btn btn-sm btn-primary" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Careers at Vallalar Group of Institutions</h1>
+          <p class="lead">Join a values-driven community focused on compassion, service, and academic excellence.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid two">
+          <div class="card">
+            <h2>Why join us</h2>
+            <p class="muted">Mission-led culture • Professional growth • Supportive campus • Competitive pay</p>
+
+            <h3 style="margin-top: 1rem;">Open roles</h3>
+            <ul class="checklist">
+              <li>Teachers — Matric &amp; CBSE (All subjects)</li>
+              <li>Early Years Educators</li>
+              <li>Lab Instructors (Science, Computer)</li>
+              <li>Sports Coaches &amp; PE Instructors</li>
+              <li>Arts, Music &amp; Culture Teachers</li>
+              <li>Counsellors &amp; Student Support</li>
+              <li>Administrative &amp; Facilities Staff</li>
+              <li>Teacher Educators (B.Ed)</li>
+            </ul>
+
+            <h3 style="margin-top: 1rem;">How we hire</h3>
+            <p class="muted">Send CV + cover letter → Shortlist → Interview / demo class → Offer &amp; induction</p>
+          </div>
+
+          <aside class="card" aria-labelledby="apply-now">
+            <h3 id="apply-now">Apply now</h3>
+            <p class="muted">Email your CV and a short cover letter to:</p>
+            <div class="apply-cta">
+              <a class="btn btn-primary" href="mailto:careers@vallalar.edu.in?subject=Application%20for%20%5BRole%5D">Email: careers@vallalar.edu.in</a>
+            </div>
+            <p class="muted" style="margin-top: 1rem;">Or use the form below (optional):</p>
+
+            <form class="form" action="#" onsubmit="event.preventDefault();alert('Please email your CV to careers@vallalar.edu.in');" aria-label="apply form">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="role">Role applying for</label>
+                <input id="role" name="role" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Submit (or email CV)</button>
+              </div>
+            </form>
+
+            <p class="muted small" style="margin-top: 1rem;">Address: [Institution Address]<br />Phone: [Contact Number]</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand-title">Vallalar Group of Institutions</div>
+          <p class="muted">Compassion • Service • Excellence</p>
+        </div>
+        <div>
+          <nav aria-label="Footer">
+            <ul class="footer-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <p class="muted small">Managed by Nanbargal Educational Trust</p>
+          <p class="muted small">© <span id="year"></span> Vallalar Group of Institutions. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+  </html>
+
