@@ -1,25 +1,26 @@
-// Mobile navigation toggle
-const toggle = document.querySelector('.nav-toggle');
+// Mobile navigation toggle (hamburger)
+const toggle = document.getElementById('nav-toggle');
 const nav = document.getElementById('primary-nav');
 const navClose = document.querySelector('.nav-close');
 
 if (toggle && nav) {
   const openNav = () => {
     nav.classList.add('open');
-    toggle.classList.add('open');
     toggle.setAttribute('aria-expanded', 'true');
+    document.documentElement.classList.add('nav-open');
     document.body.style.overflow = 'hidden'; // Prevent background scroll
   };
   
   const closeNav = () => {
     nav.classList.remove('open');
-    toggle.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('nav-open');
     document.body.style.overflow = ''; // Restore scroll
   };
   
   toggle.addEventListener('click', () => {
-    if (nav.classList.contains('open')) {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
       closeNav();
     } else {
       openNav();
@@ -39,7 +40,7 @@ if (toggle && nav) {
   
   // Close nav when pressing Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.classList.contains('open')) {
+    if (e.key === 'Escape' && (nav.classList.contains('open') || toggle.getAttribute('aria-expanded') === 'true')) {
       closeNav();
     }
   });
