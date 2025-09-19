@@ -8,6 +8,7 @@
   --color-ink: #0f172a; /* Dark slate for body text */
   --color-muted: #475569; /* Muted slate */
   --radius: 20px;
+  --radius-pill: 9999px;
   --shadow: 0 10px 40px rgba(2, 6, 23, 0.08);
   --shadow-lg: 0 20px 60px rgba(2, 6, 23, 0.12);
 
@@ -136,7 +137,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -249,7 +250,7 @@ p {
 .hamburger:focus { 
   outline: 2px solid rgba(0,0,0,0.08); 
   outline-offset: 4px; 
-  border-radius: 8px; 
+  border-radius: var(--radius-pill); 
 }
 
 .hamburger .bar {
@@ -366,7 +367,7 @@ p {
   text-decoration: none;
   color: var(--color-ink);
   padding: 1rem 1.5rem;
-  border-radius: 12px;
+  border-radius: var(--radius-pill);
   font-weight: 500;
   font-size: 1.1rem;
   transition: all 0.3s ease;
@@ -739,7 +740,7 @@ p {
   width: 100%;
   padding: 0.75rem 1rem;
   border: 2px solid var(--color-accent);
-  border-radius: 12px;
+  border-radius: var(--radius-pill);
   font-family: inherit;
   font-size: 1rem;
   transition: border-color 0.3s ease;
