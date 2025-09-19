@@ -1324,6 +1324,20 @@ p {
   height: 28px;
 }
 
+/* Material Symbols sizing in icon circles and buttons */
+.icon-circle .material-symbols-rounded {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.contact-fab .material-symbols-rounded {
+  font-size: 20px;
+}
+
+.nav-close .material-symbols-rounded {
+  font-size: 24px;
+}
+
 /* Floating contact button */
 .contact-fab {
   position: fixed;
