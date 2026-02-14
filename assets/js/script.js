@@ -3,9 +3,15 @@ const toggle = document.getElementById('nav-toggle');
 const nav = document.getElementById('primary-nav');
 const navClose = document.querySelector('.nav-close');
 
+// Create backdrop overlay for mobile nav
+const navBackdrop = document.createElement('div');
+navBackdrop.classList.add('nav-backdrop');
+document.body.appendChild(navBackdrop);
+
 if (toggle && nav) {
   const openNav = () => {
     nav.classList.add('open');
+    navBackdrop.classList.add('open');
     toggle.setAttribute('aria-expanded', 'true');
     document.documentElement.classList.add('nav-open');
     document.body.style.overflow = 'hidden'; // Prevent background scroll
@@ -13,6 +19,7 @@ if (toggle && nav) {
   
   const closeNav = () => {
     nav.classList.remove('open');
+    navBackdrop.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
     document.documentElement.classList.remove('nav-open');
     document.body.style.overflow = ''; // Restore scroll
@@ -31,6 +38,9 @@ if (toggle && nav) {
   if (navClose) {
     navClose.addEventListener('click', closeNav);
   }
+
+  // Close nav when clicking the backdrop overlay
+  navBackdrop.addEventListener('click', closeNav);
   
   // Close nav when clicking on nav links
   const navLinks = nav.querySelectorAll('a');
