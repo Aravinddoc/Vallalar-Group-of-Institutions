@@ -1069,8 +1069,18 @@ p {
 .footer-links {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
 }
 
 .footer-links a {
@@ -1308,6 +1318,10 @@ textarea:focus-visible {
 /* Utilities */
 .text-center {
   text-align: center;
+}
+
+.mt-1 {
+  margin-top: 0.75rem;
 }
 
 .apply-cta {
